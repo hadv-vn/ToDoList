@@ -3,11 +3,13 @@ package com.joyce.todolist
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.joyce.todolist.ui.TDLDayScreen
+import com.joyce.todolist.ui.TDLWeeklyScreen
 import com.joyce.todolist.ui.theme.ToDoListTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,7 +24,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TDLDayScreen()
+                    Column {
+                        TDLDayScreen()
+                        TDLWeeklyScreen()
+                    }
+
                 }
             }
         }
